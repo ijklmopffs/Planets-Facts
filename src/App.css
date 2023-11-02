@@ -1,0 +1,76 @@
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Antonio", sans-serif;
+}
+
+body {
+  background-color: #070724;
+  background-image: url(../assets/background-stars.svg);
+  background-repeat: no-repeat;
+}
+
+.after-underline {
+  position: relative;
+}
+
+.after-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 30px;
+  left: 0;
+  background-color: #419ebb;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+}
+
+.after-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.text-select {
+  position: relative;
+}
+
+.text-select::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 30px;
+  background-color: #419ebb;
+}
+
+.venus::after {
+  background-color: #eda249;
+}
+
+.earth::after {
+  background-color: #6d2ed5;
+}
+
+.mars::after {
+  background-color: #d14c32;
+}
+
+.jupiter::after {
+  background-color: #d83a34;
+}
+
+.saturn::after {
+  background-color: #cd5120;
+}
+
+.uranus::after {
+  background-color: #1ec1a2;
+}
+
+.neptune::after {
+  background-color: #2d68f0;
+}
