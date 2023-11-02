@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import jsonData from "../../data.json";
+import mercury from "../../assets/planet-mercury.svg";
+import mercuryInternal from "../../assets/planet-mercury-internal.svg";
+import mercuryGeology from "../../assets/geology-mercury.png";
 import icon from "../../assets/icon-source.svg";
 import { useState } from "react";
 
@@ -40,22 +43,22 @@ const PlanetInfo = () => {
       <div className="md:hidden w-full bg-[#979797] h-[1px]"></div>
 
       <div className="flex flex-col gap-4 items-center justify-center h-screen">
-        <section className="text-white flex flex-col items-center lg:flex-row justify-center text-start md:gap-20">
+        <section className="text-white flex flex-col items-center lg:flex-row justify-center text-start lg:gap-20">
           <div className="relative">
             <img
               src={
                 activeContent === "overview"
-                  ? jsonData[0].images.planet
+                  ? mercury
                   : activeContent === "structure"
-                  ? jsonData[0].images.internal
-                  : jsonData[0].images.planet
+                  ? mercuryInternal
+                  : mercury
               }
               alt=""
               className="md:w-96 md:h-96 w-44 h-44"
             />
             <img
               src={
-                activeContent === "geology" ? jsonData[0].images.geology : ""
+                activeContent === "geology" ? mercuryGeology : ""
               }
               className={
                 activeContent === "overview"

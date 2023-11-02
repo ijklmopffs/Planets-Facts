@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import jsonData from "../../data.json";
+import earth from "../../assets/planet-earth.svg";
+import earthInternal from "../../assets/planet-earth-internal.svg";
+import earthGeology from "../../assets/geology-earth.png";
 import icon from "../../assets/icon-source.svg";
 import { useState } from "react";
 
@@ -46,23 +49,21 @@ export default function Earth() {
       <div className="md:hidden w-full bg-[#979797] h-[1px]"></div>
 
       <div className="flex flex-col gap-4 items-center justify-center h-screen">
-        <section className="text-white flex flex-col items-center lg:flex-row justify-center text-start md:gap-20">
+        <section className="text-white flex flex-col items-center lg:flex-row justify-center text-start lg:gap-20">
           <div className="relative">
             <img
               src={
                 activeContent === "overview"
-                  ? jsonData[2].images.planet
+                  ? earth
                   : activeContent === "structure"
-                  ? jsonData[2].images.internal
-                  : jsonData[2].images.planet
+                  ? earthInternal
+                  : earth
               }
               alt=""
               className="md:w-96 md:h-96 w-44 h-44"
             />
             <img
-              src={
-                activeContent === "geology" ? jsonData[2].images.geology : ""
-              }
+              src={activeContent === "geology" ? earthGeology : ""}
               className={
                 activeContent === "overview"
                   ? "w-40 h-48 relative left-28 bottom-28 hidden"

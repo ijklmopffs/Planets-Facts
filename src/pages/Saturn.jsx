@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import jsonData from "../../data.json";
+import saturn from "../../assets/planet-saturn.svg";
+import saturnInternal from "../../assets/planet-saturn-internal.svg";
+import saturnGeology from "../../assets/geology-saturn.png";
 import icon from "../../assets/icon-source.svg";
 import { useState } from "react";
 
@@ -46,22 +49,22 @@ export default function Saturn() {
       <div className="md:hidden w-full bg-[#979797] h-[1px]"></div>
 
       <div className="flex flex-col gap-4 items-center justify-center h-screen">
-        <section className="text-white flex flex-col items-center lg:flex-row justify-center text-start md:gap-20">
+        <section className="text-white flex flex-col items-center lg:flex-row justify-center text-start lg:gap-20">
           <div className="relative">
             <img
               src={
                 activeContent === "overview"
-                  ? jsonData[5].images.planet
+                  ? saturn
                   : activeContent === "structure"
-                  ? jsonData[5].images.internal
-                  : jsonData[5].images.planet
+                  ? saturnInternal
+                  : saturn
               }
               alt=""
               className="md:w-96 md:h-96 w-44 h-44"
             />
             <img
               src={
-                activeContent === "geology" ? jsonData[5].images.geology : ""
+                activeContent === "geology" ? saturnGeology : ""
               }
               className={
                 activeContent === "overview"

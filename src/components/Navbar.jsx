@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import hamburger from "../../assets/icon-hamburger.svg";
-import chevron from "../../assets/icon-chevron.svg";
 import mercury from "../../assets/planet-mercury.svg";
 import venus from "../../assets/planet-venus.svg";
 import earth from "../../assets/planet-earth.svg";
@@ -10,6 +8,8 @@ import saturn from "../../assets/planet-saturn.svg";
 import uranus from "../../assets/planet-uranus.svg";
 import neptune from "../../assets/planet-neptune.svg";
 import { useState } from "react";
+import hamburger from "../../assets/icon-hamburger.svg";
+import chevron from "../../assets/icon-chevron.svg";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);

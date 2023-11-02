@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import jsonData from "../../data.json";
+import uranus from "../../assets/planet-uranus.svg";
+import uranusInternal from "../../assets/planet-uranus-internal.svg";
+import uranusGeology from "../../assets/geology-uranus.png";
 import icon from "../../assets/icon-source.svg";
 import { useState } from "react";
 
@@ -46,22 +49,22 @@ export default function Uranus() {
       <div className="md:hidden w-full bg-[#979797] h-[1px]"></div>
 
       <div className="flex flex-col gap-4 items-center justify-center h-screen">
-        <section className="text-white flex flex-col items-center lg:flex-row justify-center text-start md:gap-20">
+        <section className="text-white flex flex-col items-center lg:flex-row justify-center text-start lg:gap-20">
           <div className="relative">
             <img
               src={
                 activeContent === "overview"
-                  ? jsonData[6].images.planet
+                  ? uranus
                   : activeContent === "structure"
-                  ? jsonData[6].images.internal
-                  : jsonData[6].images.planet
+                  ? uranusInternal
+                  : uranus
               }
               alt=""
               className="md:w-96 md:h-96 w-44 h-44"
             />
             <img
               src={
-                activeContent === "geology" ? jsonData[6].images.geology : ""
+                activeContent === "geology" ? uranusGeology : ""
               }
               className={
                 activeContent === "overview"
